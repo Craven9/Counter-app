@@ -1,15 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Counter App</title>
-    <script type="module" src="./counter-app.js"></script>
-  </head>
-  <body>
-    <h1>Counter App Demo</h1>
+<head>
+  <meta charset="UTF-8" />
+  <title>Counter App Demo</title>
+  <!-- Load our counter web component script as a module -->
+  <script type="module" src="./counter-app.js"></script>
+  <style>
+    :root {
+      background-color: var(--ddd-theme-default-white);
+      color: var(--ddd-theme-default-text);
+      font-family: sans-serif;
+    }
 
-    <counter-app>Test</counter-app>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 32px;
+    }
+    header.app-header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 8px;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    header.app-header h1 { margin: 0; font-size: 2rem; }
+  </style>
+</head>
+<body>
+  <!-- Simple centered title for the page -->
+  <header class="app-header"><h1>Counter App</h1></header>
+  
+  <!-- Default counter: uses default min/max/counter values from the component -->
+  <counter-app></counter-app>
 
-    <counter-app counter="16" min="10" max="25"></counter-app>
-  </body>
+  <!-- Custom counter: sets initial counter, min, and max via HTML attributes -->
+  <counter-app counter="16" min="10" max="25"></counter-app>
+</body>
 </html>
+
